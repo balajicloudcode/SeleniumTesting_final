@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class SeleniumTesting_ZDD {
 	
@@ -15,11 +16,20 @@ public class SeleniumTesting_ZDD {
 	public  void SeleniumTesting() throws InterruptedException {
 			
 			{
-				System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/chromedriver.exe");
-				WebDriver driver = new ChromeDriver();
+				//System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/chromedriver.exe");
+				//WebDriver driver = new ChromeDriver();
+				//WebDriver driver = new RemoteWebDriver(new URL("http://jenkins.mydomain:4444/wd/hub"), capability);
+				//DesiredCapabilities capability = DesiredCapabilities.firefox();
+				//capability.setCapability("jenkins.label","redhat5 && amd64");
+				//capability.setCapability("jenkins.nodeName","(master)");
+				
+				
 				//WebDriver driver = new RemoteWebDriver(new URL("http://54.83.156.141:8080/wd/hub"), capability);
-				//WebDriver driver = new FirefoxDriver();
-				driver.navigate().to("http://shows-cglean.cglean.com/");
+				System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/geckodriver.exe");
+				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+				capabilities.setCapability("marionette", true);
+				WebDriver driver = new FirefoxDriver(capabilities);
+				driver.navigate().to("http://show.cglean.com/");
 				driver.manage().window().maximize();
 				Thread.sleep(1000);
 
