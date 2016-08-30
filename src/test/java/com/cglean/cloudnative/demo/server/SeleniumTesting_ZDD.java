@@ -17,6 +17,7 @@ public class SeleniumTesting_ZDD {
 			{
 				//System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/chromedriver.exe");
 				//WebDriver driver = new ChromeDriver();
+				WebDriver driver = new RemoteWebDriver(new URL("http://54.83.156.141:8080/wd/hub"), capability);
 				WebDriver driver = new FirefoxDriver();
 				driver.navigate().to("http://shows-cglean.cglean.com/");
 				driver.manage().window().maximize();
