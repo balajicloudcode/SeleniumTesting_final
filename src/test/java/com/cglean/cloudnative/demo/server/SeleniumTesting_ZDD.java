@@ -30,7 +30,7 @@ public class SeleniumTesting_ZDD {
 			//	capabilities.setCapability("marionette", true);
 			//	WebDriver driver = new FirefoxDriver(capabilities);
 				WebDriver driver = new FirefoxDriver();
-				driver.navigate().to("http://show.cglean.com/");
+				driver.navigate().to("http://shows-cglean.cglean.com/");
 				driver.manage().window().maximize();
 				Thread.sleep(1000);
 
