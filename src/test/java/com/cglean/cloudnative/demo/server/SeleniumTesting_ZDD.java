@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.remote.RemoteWebDriver;
 public class SeleniumTesting_ZDD {
 	
 	
@@ -29,7 +29,13 @@ public class SeleniumTesting_ZDD {
 			//	DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			//	capabilities.setCapability("marionette", true);
 			//	WebDriver driver = new FirefoxDriver(capabilities);
-				WebDriver driver = new FirefoxDriver();
+				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+				capabilities.setCapability("marionette", true);
+				WebDriver driver = new RemoteWebDriver(capabilities);
+			
+	
+			
+				//WebDriver driver = new FirefoxDriver();
 				driver.navigate().to("http://shows-cglean.cglean.com/");
 				driver.manage().window().maximize();
 				Thread.sleep(1000);
