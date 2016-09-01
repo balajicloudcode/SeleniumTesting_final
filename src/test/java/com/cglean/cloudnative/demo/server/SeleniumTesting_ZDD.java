@@ -25,10 +25,11 @@ public class SeleniumTesting_ZDD {
 				
 				
 				//WebDriver driver = new RemoteWebDriver(new URL("http://54.83.156.141:8080/wd/hub"), capability);
-				System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/geckodriver.exe");
-				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-				capabilities.setCapability("marionette", true);
-				WebDriver driver = new FirefoxDriver(capabilities);
+			//	System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Jenkins/workspace/ZDD_selenium/geckodriver.exe");
+			//	DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			//	capabilities.setCapability("marionette", true);
+			//	WebDriver driver = new FirefoxDriver(capabilities);
+				WebDriver driver = new FirefoxDriver();
 				driver.navigate().to("http://show.cglean.com/");
 				driver.manage().window().maximize();
 				Thread.sleep(1000);
